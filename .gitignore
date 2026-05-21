@@ -10,18 +10,9 @@ __pycache__/
 *.pyd
 .Python
 
-# Data files (large files — don't push to GitHub)
-data/sales_data.csv
-data/cleaned_sales_data.csv
-data/demand_curve_*.png
-
 # Trained model files (can be regenerated)
 data/demand_model.pkl
 data/label_encoder.pkl
-
-# Jupyter Notebooks checkpoints
-.ipynb_checkpoints/
-notebooks/
 
 # VS Code settings
 .vscode/

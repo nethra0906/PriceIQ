@@ -39,24 +39,6 @@ PriceIQ is a dynamic pricing engine that simulates what companies like Amazon, U
 
 ---
 
-## Project Structure
-PriceIQ/
-│
-├── data/                    # Generated & cleaned datasets
-├── src/
-│   ├── data_generator.py    # Synthetic data generation
-│   ├── data_cleaning.py     # Cleaning + feature engineering
-│   ├── demand_forecasting.py# XGBoost demand model
-│   ├── price_elasticity.py  # Elasticity analysis
-│   └── optimization.py      # Price optimization engine
-│
-├── dashboard/
-│   └── app.py               # Streamlit dashboard
-│
-├── requirements.txt
-└── README.md
-
----
 
 ## Quickstart
 

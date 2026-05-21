@@ -1,0 +1,41 @@
+# Virtual Environment
+venv/
+env/
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Data files (large files — don't push to GitHub)
+data/sales_data.csv
+data/cleaned_sales_data.csv
+data/demand_curve_*.png
+
+# Trained model files (can be regenerated)
+data/demand_model.pkl
+data/label_encoder.pkl
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+notebooks/
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.out
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/

@@ -29,30 +29,29 @@ def is_festival(date):
 
 def generate_demand(base_price, current_price, competitor_price, inventory,
                     is_holiday, is_weekend, month, discount):
-    # Price elasticity effect
+   
     price_ratio = current_price / base_price
     elasticity = -1.8
     demand = 100 * (price_ratio ** elasticity)
 
-    # Competitor effect
+    
     comp_gap = (current_price - competitor_price) / competitor_price
     demand *= (1 - 0.5 * comp_gap)
 
-    # Seasonal effect
+ 
     seasonal_boost = {11: 1.5, 12: 1.4, 10: 1.2, 1: 1.1}.get(month, 1.0)
     demand *= seasonal_boost
 
-    # Holiday / weekend effect
+   
     if is_holiday: demand *= 1.3
     if is_weekend: demand *= 1.15
 
-    # Discount effect
     if discount > 0: demand *= (1 + discount * 2)
 
-    # Inventory constraint
+    
     demand = min(demand, inventory)
 
-    # Add noise
+
     demand *= np.random.uniform(0.85, 1.15)
     return max(0, int(demand))
 
@@ -107,7 +106,7 @@ def generate_dataset(days=730):
     df = pd.DataFrame(records)
     os.makedirs('data', exist_ok=True)
     df.to_csv('data/sales_data.csv', index=False)
-    print(f"✅ Dataset generated: {len(df)} rows")
+    print(f"Dataset generated: {len(df)} rows")
     print(df.head())
     return df
 

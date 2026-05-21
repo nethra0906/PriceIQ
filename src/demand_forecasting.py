@@ -21,7 +21,7 @@ FEATURES = [
 def train_model(filepath='data/cleaned_sales_data.csv'):
     df = pd.read_csv(filepath, parse_dates=['Date'])
 
-    # Encode product IDs
+
     le = LabelEncoder()
     df['Product_ID_enc'] = le.fit_transform(df['Product_ID'])
 
@@ -51,7 +51,7 @@ def train_model(filepath='data/cleaned_sales_data.csv'):
     print(f"   MAE  : {mae:.2f} units")
     print(f"   R²   : {r2:.4f}")
 
-    # Feature importance
+   
     importances = pd.Series(model.feature_importances_, index=FEATURES)
     print(f"\n📊 Top Features:\n{importances.sort_values(ascending=False).head(8)}")
 
@@ -61,7 +61,7 @@ def train_model(filepath='data/cleaned_sales_data.csv'):
     with open('data/label_encoder.pkl', 'wb') as f:
         pickle.dump(le, f)
 
-    print("\n💾 Model saved → data/demand_model.pkl")
+    print("\nModel saved → data/demand_model.pkl")
     return model, le
 
 def predict_demand(price, competitor_price, discount, inventory,
@@ -78,7 +78,7 @@ def predict_demand(price, competitor_price, discount, inventory,
     price_gap = actual_price - competitor_price
     price_gap_pct = price_gap / competitor_price
 
-    # Need base price for ratio — approximate from encoder mapping
+   
     base_prices = {'LAPTOP001': 75000, 'PHONE001': 25000,
                    'HEAD001': 5000, 'WATCH001': 15000}
     base_price = base_prices.get(product_id, price)
@@ -108,11 +108,11 @@ def predict_demand(price, competitor_price, discount, inventory,
 
 if __name__ == '__main__':
     model, le = train_model()
-    # Quick test
+    
     demand = predict_demand(
         price=75000, competitor_price=73000, discount=0.0,
         inventory=200, holiday=False, weekend=False,
         month=11, day_of_week=1, quarter=4,
         product_id='LAPTOP001', model=model, le=le
     )
-    print(f"\n🎯 Predicted Demand (test): {demand} units")
+    print(f"\nPredicted Demand (test): {demand} units")

@@ -47,13 +47,13 @@ def train_model(filepath='data/cleaned_sales_data.csv'):
     mae = mean_absolute_error(y_test, preds)
     r2 = r2_score(y_test, preds)
 
-    print(f"\n✅ Model Trained!")
+    print(f"\nModel Trained!")
     print(f"   MAE  : {mae:.2f} units")
     print(f"   R²   : {r2:.4f}")
 
    
     importances = pd.Series(model.feature_importances_, index=FEATURES)
-    print(f"\n📊 Top Features:\n{importances.sort_values(ascending=False).head(8)}")
+    print(f"\nTop Features:\n{importances.sort_values(ascending=False).head(8)}")
 
     os.makedirs('data', exist_ok=True)
     with open('data/demand_model.pkl', 'wb') as f:

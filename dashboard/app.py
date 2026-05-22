@@ -24,10 +24,10 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* Global Container Adjustments */
+   
     .block-container { padding-top: 1.5rem; max-width: 96%; }
     
-    /* Native Component Overrides for Premium Aesthetic */
+   
     div[data-testid="stMetric"] {
         background-color: var(--background-color);
         border: 1px solid rgba(128, 128, 128, 0.2);
@@ -36,7 +36,7 @@ st.markdown("""
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
     }
     
-    /* Plotly Chart Clean Containerization */
+
     div[data-testid="stPlotlyChart"] {
         border: 1px solid rgba(128, 128, 128, 0.15);
         border-radius: 12px;
@@ -312,8 +312,8 @@ if model_loaded:
             f"₹{competitor_price:,.0f}",
             f"₹{price_gap:+,.0f}",
             f"{(price_gap / competitor_price * 100):+.1f}%",
-            "🟢 Parity Threshold Maintained" if abs(price_gap / competitor_price) < 0.05 else
-            ("🔴 High-Side Variance: Compress Strategy Price" if price_gap > 0 else "🔵 Low-Side Variance: Capture Leftover Spread")
+            "Parity Threshold Maintained" if abs(price_gap / competitor_price) < 0.05 else
+            ("High-Side Variance: Compress Strategy Price" if price_gap > 0 else "🔵 Low-Side Variance: Capture Leftover Spread")
         ]
     })
     

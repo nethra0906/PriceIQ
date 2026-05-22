@@ -48,7 +48,7 @@ def optimize_price(product_id, competitor_price, inventory,
     df = pd.DataFrame(results)
     best = df.loc[df['Profit'].idxmax()]
 
-    print(f"\n🏆 Optimal Pricing for {product_id}")
+    print(f"\nOptimal Pricing for {product_id}")
     print(f"   Optimal Price    : ₹{best['Price']:,.2f}")
     print(f"   Predicted Demand : {best['Predicted_Demand']} units")
     print(f"   Expected Revenue : ₹{best['Revenue']:,.2f}")

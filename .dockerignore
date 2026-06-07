@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.vscode/
+data/sales_data.csv
+data/cleaned_sales_data.csv
+data/*.pkl
+data/*.png
+notebooks/
+*.md

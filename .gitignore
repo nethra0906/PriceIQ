@@ -30,3 +30,4 @@ desktop.ini
 dist/
 build/
 *.egg-info/
+venv

@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from scipy import stats
@@ -33,6 +34,7 @@ def load_and_clean(filepath='data/sales_data.csv'):
     df['Price_to_Base_Ratio'] = df['Actual_Price'] / df['Base_Price']
 
     print(f"\nClean data shape: {df.shape}")
+    os.makedirs('data', exist_ok=True)
     df.to_csv('data/cleaned_sales_data.csv', index=False)
     print("Saved → data/cleaned_sales_data.csv")
     return df

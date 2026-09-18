@@ -10,9 +10,13 @@ __pycache__/
 *.pyd
 .Python
 
-# Trained model files (can be regenerated)
-data/demand_model.pkl
-data/label_encoder.pkl
+# Generated pipeline artifacts (can be regenerated via entrypoint.sh)
+data/*.csv
+data/*.pkl
+data/*.png
+
+# pytest cache
+.pytest_cache/
 
 # VS Code settings
 .vscode/
@@ -30,4 +34,3 @@ desktop.ini
 dist/
 build/
 *.egg-info/
-venv

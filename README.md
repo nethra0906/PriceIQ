@@ -31,10 +31,10 @@ PriceIQ is a dynamic pricing engine that simulates what companies like Amazon, U
 |---|---|
 | Language | Python 3.10+ |
 | ML Model | XGBoost, Scikit-learn |
-| Forecasting | Prophet |
-| Optimization | Scipy, NumPy Grid Search |
+| Optimization | NumPy Grid Search |
 | Dashboard | Streamlit, Plotly |
 | Data | Pandas, Faker (synthetic) |
+| Testing | Pytest |
 
 ---
 
@@ -43,7 +43,7 @@ PriceIQ is a dynamic pricing engine that simulates what companies like Amazon, U
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/yourusername/PriceIQ.git
+git clone https://github.com/nethra0906/PriceIQ.git
 cd PriceIQ
 ```
 
@@ -75,6 +75,25 @@ streamlit run dashboard/app.py
 
 ---
 
+## Running with Docker
+
+```bash
+docker compose up --build
+```
+
+The full pipeline runs once on first start (writing artifacts into the mounted `data/` volume) and is skipped on subsequent restarts. The dashboard is then available at [http://localhost:8501](http://localhost:8501).
+
+---
+
+## Running Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+---
+
 ## Dashboard Preview
 
 > Real-time optimal price, demand curve, revenue vs profit chart, competitor analysis, and inventory alerts — all in one view.
@@ -98,6 +117,5 @@ streamlit run dashboard/app.py
 - [ ] LLM-powered insight layer explaining price changes
 - [ ] Real-time competitor price scraping
 - [ ] REST API with FastAPI for integration
-- [ ] Docker containerization
 
 
